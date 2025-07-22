@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-800 font-sans">
+<x-alert type = "danger"> massge <x-alert/>
 
     <div class="container mx-auto px-4 py-12">
         <h1 class="text-4xl font-bold mb-4 text-center text-blue-600">About Us</h1>
