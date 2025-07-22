@@ -11,7 +11,7 @@
 <body class="bg-white text-gray-800 font-sans">
 
     <div class="container mx-auto px-4 py-12">
-        <h1>Welcome</h1>
+        <h1>Named View</h1>
     </div>
 
 </body>
