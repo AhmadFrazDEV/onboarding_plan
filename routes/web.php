@@ -16,3 +16,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/{id}' , function($id)
+{
+    echo 'user id is' . $id;
+});
+
+// rout for optional parametr
+Route::get('/user_name/{name?}', function($name = null) {
+    if (empty($name)) {
+        echo 'Not logged in';
+    } else {
+        echo "Welcome {$name}";  
+    }
+});
+
+// Routing via controllers
+Route::get('/home/welcome' , [test_controller::class , 'home']);
+Route::get('/about' , [test_controller::class , 'Us']);
+
+// controller with paramerters
+Route::get('get_parameter/{name}/{id?}' , [test_controller::class , 'show']);
+
+route::controller(test_controller::class)->group(function(){
+    route::get('/home' , 'welcome');
+});
