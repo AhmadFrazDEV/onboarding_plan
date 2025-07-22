@@ -59,5 +59,12 @@ Route::controller(route_controller::class)->group(function(){
 
 
 
+// ============== Blade Templates ==============
+Route::get('/template' , function(){
+    return view('template_view' , ['name' => 'Ahmad',
+]);
+});
+
+
 
 
