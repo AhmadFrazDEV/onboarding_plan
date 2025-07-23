@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\route_controller;
+use App\Http\Controllers\post_controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,24 +48,31 @@ use App\Http\Controllers\route_controller;
 //  ========= Routes Groups ============
 // Name Routes
 
-Route::get('/user/profile' , function(){
-    return view('name_view');
-})->name('profile');
+// Route::get('/user/profile' , function(){
+//     return view('name_view');
+// })->name('profile');
 
-// Controller Route
-Route::controller(route_controller::class)->group(function(){
-    Route::get('/url_1' , 'home');
-    Route::get('/url_2' , 'Us');
-});
-
-
-
-// ============== Blade Templates ==============
-Route::get('/template' , function(){
-    return view('template_view' , ['name' => 'Ahmad',
-]);
-});
+// // Controller Route
+// Route::controller(route_controller::class)->group(function(){
+//     Route::get('/url_1' , 'home');
+//     Route::get('/url_2' , 'Us');
+// });
 
 
 
+// // ============== Blade Templates ==============
+// Route::get('/template' , function(){
+//     return view('template_view' , ['name' => 'Ahmad',
+// ]);
+// });
 
+// Route::controller(post::class)->group(function()
+// {
+//     Route::get('/posts' , 'show');
+// }
+// );
+
+Route::get('/post' , [post_controller::class , 'show']);
+Route::DELETE('/post/{id}' , [post_controller::class,'destroy'])->name('post.destroy');
+Route::get('/post/{id}/edit' , [post_controller::class , 'edit'])->name('post.edit');
+Route::put('/post/{id}' , [post_controller::class , 'update'])->name('post.update');
