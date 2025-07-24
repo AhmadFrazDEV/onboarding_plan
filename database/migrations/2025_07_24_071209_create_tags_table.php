@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        schema::create('testing_migration' , function(blueprint $t){
-            $t->id();
-            $t->string ('name');
-            $t->integer('age');
-            $t->longtext('Description');
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        schema::dropIfExists('testing_migration');
+        Schema::dropIfExists('tags');
     }
 };

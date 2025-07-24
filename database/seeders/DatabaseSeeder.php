@@ -20,7 +20,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(TestModelSeeder::class);
-        $this->call(MtPostsSeeder::class);
+        // $this->call(TestModelSeeder::class);
+        // $this->call(MtPostsSeeder::class);
+
+        // $this->call(myposts::class);
+        // $this->call(tags::class);
+        // $this->call(piviot_seed::class);
+
+        $this->call([
+            PostsSeeder::class,
+            TagsSeeder::class,
+            piviotSeed::class
+        ]);
+
+
     }
 }
