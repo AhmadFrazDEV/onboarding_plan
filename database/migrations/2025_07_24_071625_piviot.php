@@ -13,8 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('test');
-        
+        schema::create('piviot' , function(blueprint $table){
+            $table->id();
+
+            $table->foreignId('post_id')
+            ->constrained('posts')
+            ->onDelete('cascade');
+
+            $table->foreignId('tag_id')
+            ->constrained('tags')
+            ->onDelete('cascade');
+        });
     }
 
     /**

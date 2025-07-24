@@ -72,7 +72,27 @@ use App\Http\Controllers\post_controller;
 // }
 // );
 
-Route::get('/post' , [post_controller::class , 'show']);
-Route::DELETE('/post/{id}' , [post_controller::class,'destroy'])->name('post.destroy');
-Route::get('/post/{id}/edit' , [post_controller::class , 'edit'])->name('post.edit');
-Route::put('/post/{id}' , [post_controller::class , 'update'])->name('post.update');
+// Route::get('/post' , [post_controller::class , 'show']);
+// Route::DELETE('/post/{id}' , [post_controller::class,'destroy'])->name('post.destroy');
+// Route::get('/post/{id}/edit' , [post_controller::class , 'edit'])->name('post.edit');
+// Route::put('/post/{id}' , [post_controller::class , 'update'])->name('post.update');
+
+// ========================================
+//  Relationship - Hasmany
+// -- Posts and Tags
+// -- making two models posts and tags
+// -- their migrations
+// -- seeding 
+// -- In model defining the relation
+// -- A blade template to show the quries data
+use App\Http\Controllers\post_tag_controller;
+use App\Http\Controllers\formcontroller;
+
+Route::get('/' , [post_tag_controller::class , 'index'])->name('posts.index');
+
+Route::get('/taged_user' , [post_tag_controller::class , 'taged_users'])->name('tags.post');
+
+Route::get('/form' , [formcontroller::class , 'index'])->name('formRoute');
+Route::post('/register' , [formcontroller::class , 'register'])->name('form.submit');
+
+
