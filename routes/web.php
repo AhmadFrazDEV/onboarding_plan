@@ -96,3 +96,15 @@ Route::get('/form' , [formcontroller::class , 'index'])->name('formRoute');
 Route::post('/register' , [formcontroller::class , 'register'])->name('form.submit');
 
 
+
+
+// ===================== Route Binding ====================
+
+use App\Models\posts;
+Route::get('/posts/{p}' , function(posts $p)
+{
+    return $p->title;
+});
+
+
+Route::get('/tags/{tag_id}' , [formcontroller::class , 'tag_show']);

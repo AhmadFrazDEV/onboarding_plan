@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User_Registration;
 use Illuminate\Support\Facades\Hash;
+use App\Models\tags;
 
 class formcontroller extends Controller
 {
@@ -30,8 +31,10 @@ class formcontroller extends Controller
         );
 
         return redirect('/')->with('success' , 'Successfully Register');
+    }
 
-
-
+    public function tag_show(tags $tag_id)
+    {
+        dump($tag_id);
     }
 }
